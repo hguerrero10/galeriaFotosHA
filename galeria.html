@@ -4,60 +4,93 @@
   <meta charset="UTF-8">
   <title>Galeria Hugo & Alondra</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+
+  <style>
+    .containersopotify {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 387px;
+        height: 221px;
+        padding: 33px;
+        box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
     <div class="Container">
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto11.jpeg" alt="" />
+            <div class="Picture-note"><span>H & A <img src="images/iconos/corazon.png" alt=""> </span></div>
+        </div>
 
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto11.jpeg" alt="" />
-        <div class="Picture-note"><span>H & A <img src="images/iconos/corazon.png" alt=""> </span></div>
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto10.jpeg" alt="" />
+            <div class="Picture-note"><span>Cuando gane la Alcancia <img src="images/iconos/hucha.png" alt=""></span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto9.jpeg" alt="" />
+            <div class="Picture-note"><span>Wedding Time <img src="images/iconos/boda.png" alt=""></span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto8.JPEG" alt="" />
+            <div class="Picture-note"><span>Concentrado Trabajando</span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto7.JPEG" alt="" />
+            <div class="Picture-note"><span>Museo de Zacatecana <img src="images/iconos/exposicion.png" alt=""></span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto6.JPEG" alt="" />
+            <div class="Picture-note"><span>Con Aisha nuestra bebe</span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto5.PNG" alt="" />
+            <div class="Picture-note"><span>Nuestra cancion <img src="images/iconos/spotify.png" alt=""></span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto4.PNG" alt="" />
+            <div class="Picture-note"><span>Nuestra Casita en Minecraft <img src="images/iconos/creeper.png" style="width: 30px;" alt=""></span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto3.JPEG" alt="" />
+            <div class="Picture-note"><span>Cumpleaños 26</span></div>
+        </div>
+
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto2.jpg" alt="" />
+            <div class="Picture-note"><span>Conociendo Fundidora <img src="images/iconos/parque-tematico.png" alt=""></span></div>
+        </div>
+        
+        <div class="Picture">
+            <img class="Picture-img" src="images/foto1.jpg" alt="" />
+            <div class="Picture-note"><span>En un Starbucks <img src="images/iconos/starbucks.png" alt=""></span></div>
+        </div>
     </div>
 
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto10.jpeg" alt="" />
-        <div class="Picture-note"><span>Cuando gane la Alcancia <img src="images/iconos/hucha.png" alt=""></span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto9.jpeg" alt="" />
-        <div class="Picture-note"><span>Wedding Time <img src="images/iconos/boda.png" alt=""></span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto8.JPEG" alt="" />
-        <div class="Picture-note"><span>Concentrado Trabajando</span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto7.JPEG" alt="" />
-        <div class="Picture-note"><span>Museo de Zacatecana <img src="images/iconos/exposicion.png" alt=""></span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto6.JPEG" alt="" />
-        <div class="Picture-note"><span>Con Aisha nuestra bebe</span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto5.PNG" alt="" />
-        <div class="Picture-note"><span>Nuestra cancion <img src="images/iconos/spotify.png" alt=""></span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto4.PNG" alt="" />
-        <div class="Picture-note"><span>Teotihuacán-Mexico</span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto3.JPEG" alt="" />
-        <div class="Picture-note"><span>Cumpleaños 26</span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto2.jpg" alt="" />
-        <div class="Picture-note"><span>Conociendo Fundidora <img src="images/iconos/parque-tematico.png" alt=""></span></div>
-    </div>
-    <div class="Picture">
-        <img class="Picture-img" src="images/foto1.jpg" alt="" />
-        <div class="Picture-note"><span>En un Starbucks <img src="images/iconos/starbucks.png" alt=""></span></div>
-    </div>
+    <div class="containersopotify">
+        <div id="embed-iframe" class="frameSpotify"></div>
     </div>
 
     <div class='made-with-love'>HECHO CON <img class="hechoconamor" src="images/iconos/corazon grande.png" alt=""></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script  src="./script.js"></script>
+    <script>
+        window.onSpotifyIframeApiReady = (IFrameAPI) => {
+            const element = document.getElementById('embed-iframe');
+            const options = {uri: 'https://open.spotify.com/playlist/2byHiykDBYzd8jVQ0C0S78', autoplay: true};
+            const callback = (EmbedController) => {};
+            IFrameAPI.createController(element, options, callback);
+        };
+    </script>
 </body>
 </html>
